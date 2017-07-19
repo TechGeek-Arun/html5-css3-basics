@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<style>
+.main {
+border: 5px groove red;
+padding:125dp;
+}
+.subset{
+
+border: 5px groove blue;
+}
+.assign{
+
+    height: 150px;
+border: 10px groove blue;
+}
+#div1, #div2 {
+    float: left;
+    width: 250px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+</style>
+<body>
+
+<h1 style="text-align: center; background-color: black;color: white;">HTML 5 Programming for .NET</h1>
+
+<div class="main">
+<h3>1.	HTML 5 Input Types:</h3>
+<div class="subset">
+Color: <input type="color" id="myColor">
+<button onclick="myColorFunction()">Select</button>
+<p>You have selected <b id="selectColor"></b></p>
+</div>
+<div class="subset">
+Date: <input type="date" id="myDate" value="2014-02-09">
+<button onclick="myDateFunction()">Select</button>
+<p>You have selected <b id="selectDate"></b></p>
+</div>
+<div class="subset">
+E-mail: <input type="email" id="myEmail" value="john@example.com">
+<button onclick="myEmailFunction()">Select</button>
+<p>You have selected <b id="selectEmail"></b></p>
+</div>
+<div class="subset">
+Month: <input type="month" id="myMonth" value="2014-05">
+<button onclick="myMonthFunction()">Select</button>
+<p>You have selected <b id="selectMonth"></b></p>
+</div>
+<div class="subset">
+Number: <input type="number" id="myNumber" value="2">
+<button onclick="myNumberFunction()">Select</button>
+<p>You have selected <b id="selectNum"></b></p>
+</div>
+<div class="subset">
+Range: <input type="range" id="myRange" value="90">
+<button onclick="myRangeFunction()">Select</button>
+<p>You have selected <b id="selectRange"></b></p>
+</div>
+<div class="subset">
+Search: <input type="search" id="mySearch" placeholder="Search for something..">
+<button onclick="mySearchFunction()">Select</button>
+<p>Placeholder is <b id="selectSearch"></b></p>
+</div>
+<div class="subset">
+Time: <input type="time" id="myTime" value="22:15:00">
+<button onclick="myTimeFunction()">Select</button>
+<p>You have selected <b id="selectTime"></b></p>
+</div>
+<div class="subset">
+Url: <input type="url" id="myURL" value="http://www.google.com">
+<button onclick="myUrlFunction()">Select</button>
+<p>You have selected <b id="selectUrl"></b></p>
+</div>
+<div class="subset">
+Week: <input type="week" id="myWeek" value="2014-W15">
+<button onclick="myWeekFunction()">Select</button>
+<p>You have selected <b id="selectWeek"></b></p>
+</div>
+<div class="subset">
+Telephone: <input type="tel" id="myTel" value="978298222">
+<button onclick="myTelFunction()">Select</button>
+<p>You have selected <b id="selectTel"></b></p>
+</div>
+</div>
+
+<div class="main">
+<h3>2.	HTML 5 Form Elements:</h3>
+<div class="subset">DATALIST
+
+  <input list="browsers" id="myData" name="browser">
+  <datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+  </div>
+<div class="subset">  KEYGEN
+<form>
+  Username: <input type="text" name="usr_name">
+  Encryption: <keygen name="security">
+  <input type="submit">
+</form>
+</div>
+
+<div class="main">
+<h3>3.	HTML 5 Form Attributes:</h3>
+<div class="subset">
+<form target="_self" autocomplete="ON" novalidate>
+  First name:<input type="text" name="fname"><br>
+  E-mail: <input type="email" name="email"><br>
+ <input type="submit" value="No validate" formtarget="_blank">
+  <input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data">
+</form>
+</div>
+<div class="subset">
+<form>
+  Quantity (between 1 and 5):
+  <input type="number" name="quantity" min="1" max="5"><br>
+Select images: <input type="file" name="img" multiple><br>
+  Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code"><br>
+  Username: <input type="text" name="usrname" placeholder="First name" required><br>
+   Multiple of 3 steps:<input type="number" name="points" step="3"><br>
+   <input type="submit" value="validate">
+</form>
+</div>
+</div>
+
+<div class="main">
+  <h1>4.	HTML 5 canvas tag<h1>
+<div class="subset">
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+</div>
+</div>
+
+<div class="main">
+	   <h1>5.	HTML 5 Drag and Drop</h1>
+	   <div class="assign">
+	   <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="https://careers.wipro.com/images/careers-wipro1.png" draggable="true" ondragstart="drag(event)" id="drag1" width="200" height="100">
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+</div>
+	  
+<div class="main">
+	 <h1>6.	HTML 5 Video and Audio</h1>
+<div class="subset">
+	 <video width="400" controls>
+  <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4">
+  
+  Your browser does not support HTML5 video.
+</video>
+</div>
+<div class="subset">
+	 <audio controls>
+  
+  <source src="http://www.html5tutorial.info/media/vincent.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+</div>
+
+
+<script>
+function myColorFunction() {
+    var x = document.getElementById("myColor").value;
+    document.getElementById("selectColor").innerHTML = x;
+}
+function myDateFunction() {
+    var x = document.getElementById("myDate").value;
+    document.getElementById("selectDate").innerHTML = x;
+}
+function myEmailFunction() {
+    var x = document.getElementById("myEmail").value;
+    document.getElementById("selectEmail").innerHTML = x;
+}
+function myMonthFunction() {
+    var x = document.getElementById("myMonth").value;
+    document.getElementById("selectMonth").innerHTML = x;
+}
+function myNumberFunction() {
+    var x = document.getElementById("myNumber").value;
+    document.getElementById("selectNum").innerHTML = x;
+}
+function myRangeFunction() {
+    var x = document.getElementById("myRange").value;
+    document.getElementById("selectRange").innerHTML = x;
+}
+function mySearchFunction() {
+    var x = document.getElementById("mySearch").placeholder;
+    document.getElementById("selectSearch").innerHTML = x;
+}
+function myTimeFunction() {
+    var x = document.getElementById("myTime").value;
+    document.getElementById("selectTime").innerHTML = x;
+}
+function myUrlFunction() {
+    var x = document.getElementById("myURL").value;
+    document.getElementById("selectUrl").innerHTML = x;
+}
+function myWeekFunction() {
+    var x = document.getElementById("myWeek").value;
+    document.getElementById("selectWeek").innerHTML = x;
+}
+function myTelFunction() {
+    var x = document.getElementById("myTel").value;
+    document.getElementById("selectTel").innerHTML = x;
+}
+function myDatalistFunction() {
+    var x = document.getElementById("myData").value;
+    document.getElementById("selectDatalist").innerHTML = x;
+}
+
+
+
+
+var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      // begin custom shape
+      context.beginPath();
+      context.moveTo(170, 80);
+      context.bezierCurveTo(130, 100, 130, 150, 230, 150);
+      context.bezierCurveTo(250, 180, 320, 180, 340, 150);
+      context.bezierCurveTo(420, 150, 420, 120, 390, 100);
+      context.bezierCurveTo(430, 40, 370, 30, 340, 50);
+      context.bezierCurveTo(320, 5, 250, 20, 250, 50);
+      context.bezierCurveTo(200, 5, 150, 20, 170, 80);
+
+      // complete custom shape
+      context.closePath();
+      context.lineWidth = 5;
+      context.fillStyle = '#8ED6FF';
+      context.fill();
+      context.strokeStyle = 'blue';
+      context.stroke();
+	  
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+</body>
+</html>
